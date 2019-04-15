@@ -12,3 +12,14 @@ And i want to rename each file to:
 ##### Filename - Author(s).extension
 ###### Eg. Rename Multiple Files in a Folder - WessCoby.pdf
 
+##  Renaming Process
+
+*   Use `filePattern` to filter for files that need to be renamed
+*   Use `authorPattern` to extract Author name(s), and assign to the variable `author` and remove underscores
+*   Use `bookNamePattern` to extract book name and assign to the variable `book` and remove underscores
+*   Combine `book` and `author` and assign to `newName`. 
+*   Format: `book - @author.extension`
+
+## Usage
+*   Create a new folder named `Files` in the root directory and place the files to be renamed in it.
+*   Then use either `npm start` or `node rename` to run.
