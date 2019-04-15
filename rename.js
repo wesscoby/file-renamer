@@ -44,11 +44,7 @@ const handleFileRename = file => {
 
         // Perform Rename
         fs.rename(filePath, newFilePath, error => {
-            if(error) {
-                state.errors.encountered = true;
-                state.errors.totalErrors++;
-                state.errors.errorMessages.push(error.message);
-            }
+            if(error) handleError(error)
         });
         if(!filePattern.test(newName)) state.successCount++;
     } catch(error) {
