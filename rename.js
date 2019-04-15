@@ -14,6 +14,7 @@ let _ = RegExp(/_/, 'g'); // To match underscores
 // Keep Track of Success and Error counts
 const state = {
     filesInDirectory: files.length,
+    matchedFiles: 0,
     errors: {
       encountered: false,
       totalErrors: 0,
@@ -62,13 +63,19 @@ const handleFileRename = file => {
 };
 
 files
-    .filter(file => filePattern.test(file))
+    .filter(file => {
+        if(filePattern.test(file)) {
+            state.matchedFiles++;
+            return file;
+        }
+    })
     .forEach(handleFileRename);
 
 // Completion Information
 log(`
     Status: Completed
     Total Files: ${state.filesInDirectory}
+    Matched Files [To Be Renamed]: ${state.matchedFiles}
     Files Renamed: ${state.successCount}
     Errors: ${state.displayErrors()}
 `);
