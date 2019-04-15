@@ -17,13 +17,13 @@ const state = {
     errors: {
       encountered: false,
       totalErrors: 0,
-      errorMessages: new Map(),
+      errorMessages: [],
     },
     successCount: 0,
     displayErrors: () => {
-        if(state.errors.encountered) {
-            let messages = state.errors.errorMessages.map((key, value) => value);
-            return `${messages.join(",")}`
+        let { encountered, errorMessages, totalErrors } = state.errors;
+        if(encountered) {
+            return `${totalErrors} [ ${errorMessages.join(",")} ]`
         } else {
             return state.errors.totalErrors;
         }
@@ -34,7 +34,9 @@ const state = {
 const handleError = error => {
     state.errors.encountered = true;
     state.errors.totalErrors++;
-    state.errors.errorMessages.set(error.code, error.message)
+    if(!state.errors.errorMessages.includes(error.message)) {
+        state.errors.errorMessages.push(error.message)
+    }
 };
 
 // File Rename Handler
@@ -68,5 +70,5 @@ log(`
     Status: Completed
     Total Files: ${state.filesInDirectory}
     Files Renamed: ${state.successCount}
-    Errors: ${state.displayErrors()}}
+    Errors: ${state.displayErrors()}
 `);
