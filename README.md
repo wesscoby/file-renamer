@@ -5,9 +5,9 @@ This was inspired by, and is based on a gist by [Scriptex](https://gist.github.c
 I have modified it to suit my purpose. 
 I have been downloading books from [Zlibrary](https://b-ok.cc/) and the downloaded files have a naming format:
 ##### \[Author\(s\)\]File_name\(z-lib.org\).extension
+###### Eg. \[WessCoby\]_Rename_Multiple_Files_in_a_Folder(z-lib.org\).pdf
 
-Spaces are replaced by underscores.
-The Key things i want from this file name string are just the file name and authos(s)
+The Key things i want from this file name string are just the file name and authors(s)
 And i want to rename each file to:
 ##### Filename - Author(s).extension
 ###### Eg. Rename Multiple Files in a Folder - WessCoby.pdf
