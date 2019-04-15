@@ -17,25 +17,32 @@ const state = {
     errors: {
       encountered: false,
       totalErrors: 0,
-      errorMessages: []
+      errorMessages: new Map(),
     },
-    successCount: 0
+    successCount: 0,
+    displayErrors: () => {
+        if(state.errors.encountered) {
+            let messages = state.errors.errorMessages.map((key, value) => value);
+            return `${messages.join(",")}`
+        } else {
+            return state.errors.totalErrors;
+        }
+    }
 };
 
 // Error Log Handler
 const handleError = error => {
     state.errors.encountered = true;
     state.errors.totalErrors++;
-    state.errors.errorMessages.push(error.message
-    );
+    state.errors.errorMessages.set(error.code, error.message)
 };
 
 // File Rename Handler
 const handleFileRename = file => {
     try {
         // Extract Information
-        let author = file.match(authorPattern)[1].replace(/_/g, " ").trim();
-        let book = file.match(bookNamePattern)[1].replace(/_/g, " ").trim();
+        let author = file.match(authorPattern)[1].replace(_, " ").trim();
+        let book = file.match(bookNamePattern)[1].replace(_, " ").trim();
         let newName = `${book} - ${author}${path.extname(file)}`;
 
         // Assign Extracted Info
@@ -50,8 +57,6 @@ const handleFileRename = file => {
     } catch(error) {
         handleError(error)
     }
-
-
 };
 
 files
@@ -63,5 +68,5 @@ log(`
     Status: Completed
     Total Files: ${state.filesInDirectory}
     Files Renamed: ${state.successCount}
-    Errors: ${(state.errors.encountered) ? `${state.errors.errorMessages}` : 'None'}
+    Errors: ${state.displayErrors()}}
 `);
