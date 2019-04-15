@@ -1,0 +1,20 @@
+{
+  "name": "MultipleFilesRenamer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rename.js",
+  "scripts": {
+    "start": "node rename"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WessCoby/file-renamer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WessCoby/file-renamer/issues"
+  },
+  "homepage": "https://github.com/WessCoby/file-renamer#readme"
+}
