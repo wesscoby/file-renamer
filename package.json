@@ -10,11 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/WessCoby/file-renamer.git"
   },
-  "keywords": ["rename"],
+  "keywords": [
+    "rename"
+  ],
   "author": "WessCoby",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/WessCoby/file-renamer/issues"
   },
-  "homepage": "https://github.com/WessCoby/file-renamer#readme"
+  "homepage": "https://github.com/WessCoby/file-renamer#readme",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
 }

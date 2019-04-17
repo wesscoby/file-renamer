@@ -1,5 +1,7 @@
 // State singleton
 
+const { green, red, yellow } = require('chalk');
+
 class State {
     constructor() {
         // Initialize properties
@@ -63,11 +65,11 @@ class State {
     // Display Log
     showLog() {
         return `
-        Status: Completed
-        Total Files: ${this.filesInDirectory}
-        Matched Files [To Be Renamed]: ${this.matchedFiles}
-        Files Renamed: ${this.filesRenamed}
-        Errors: ${this.displayErrors()}
+        Status: ${green("Completed")}
+        Total Files: ${green(this.filesInDirectory)}
+        Matched Files ${yellow("[To Be Renamed]:")} ${yellow(this.matchedFiles)}
+        Files Renamed: ${green(this.filesRenamed)}
+        Errors: ${red(this.displayErrors())}
         `;
     }
 }
