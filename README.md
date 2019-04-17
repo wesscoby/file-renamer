@@ -7,16 +7,16 @@ I have been downloading books from [Zlibrary](https://b-ok.cc/) and the download
 ##### \[Author\(s\)\]File_name\(z-lib.org\).extension
 ###### Eg. \[WessCoby\]_Rename_Multiple_Files_in_a_Folder(z-lib.org\).pdf
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_bfr.png" width="80%" title="Files: Before">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_bfr.png" width="80%" title="IDE: Before">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_bfr.png" width="95%" title="Files: Before">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_bfr.png" width="95%" title="IDE: Before">
 
 The Key things i want from this file name string are just the file name and authors(s)
 And i want to rename each file to:
 ##### Filename - Author(s).extension
 ###### Eg. Rename Multiple Files in a Folder - WessCoby.pdf
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="80%" title="Files: Before">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="80%" title="IDE: Before">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: Before">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: Before">
 
 ##  Renaming Process
 
