@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const {log} = console; // Destructure the console object
+const { log } = console; // Destructure the console object
 
 const dir = path.join(__dirname, 'Files');      // Directory containing the files
 const files = fs.readdirSync(dir);              // Files in the directory
@@ -45,6 +45,12 @@ const handleFileRename = file => {
     try {
         // Extract Information
         let author = file.match(authorPattern)[1].replace(_, " ").trim();
+        // Using an iife to check for number of authors and output the corresponding author naming format
+        // If authors are four or more, author = 'first author et al'
+        author = (() => {
+            author = author.split(",");
+            return (author.length >= 4) ? `${author[0]} et al` : author.join(",");
+        })();
         let book = file.match(bookNamePattern)[1].replace(_, " ").trim();
         let newName = `${book} - ${author}${path.extname(file)}`;
 
