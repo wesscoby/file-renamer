@@ -1,9 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const State = require('./log/State'); // State singleton
 const { log } = console; // Destructure the console object
 
 const dir = path.join(__dirname, 'Files');      // Directory containing the files
 const files = fs.readdirSync(dir);              // Files in the directory
+
+State.filesInDirectory = files.length;          // Number of files in the directory
+
 
 // Patterns
 const filePattern = RegExp(/^\[.+].+\.\w{3,}$/, 'i');
@@ -11,34 +15,7 @@ const authorPattern = RegExp(/^\[(.+)]/, 'i');
 const bookNamePattern = RegExp(/^\[.+](.+)\(z-lib.org\)\.\w{3,}$/, 'i');
 let _ = RegExp(/_/, 'g'); // To match underscores
 
-// Keep Track of Success and Error counts
-const state = {
-    filesInDirectory: files.length,
-    matchedFiles: 0,
-    errors: {
-      encountered: false,
-      totalErrors: 0,
-      errorMessages: [],
-    },
-    successCount: 0,
-    displayErrors: () => {
-        let { encountered, errorMessages, totalErrors } = state.errors;
-        if(encountered) {
-            return `${totalErrors} [ ${errorMessages.join(",")} ]`
-        } else {
-            return state.errors.totalErrors;
-        }
-    }
-};
 
-// Error Log Handler
-const handleError = error => {
-    state.errors.encountered = true;
-    state.errors.totalErrors++;
-    if(!state.errors.errorMessages.includes(error.message)) {
-        state.errors.errorMessages.push(error.message)
-    }
-};
 
 // File Rename Handler
 const handleFileRename = file => {
@@ -60,28 +37,22 @@ const handleFileRename = file => {
 
         // Perform Rename
         fs.rename(filePath, newFilePath, error => {
-            if(error) handleError(error)
+            if(error) State.logError(error);
         });
-        if(!filePattern.test(newName)) state.successCount++;
+        if(!filePattern.test(newName)) State.filesRenamed++;
     } catch(error) {
-        handleError(error)
+        State.logError(error)
     }
 };
 
 files
     .filter(file => {
         if(filePattern.test(file)) {
-            state.matchedFiles++;
+            State.matchedFiles++;
             return file;
         }
     })
     .forEach(handleFileRename);
 
 // Completion Information
-log(`
-    Status: Completed
-    Total Files: ${state.filesInDirectory}
-    Matched Files [To Be Renamed]: ${state.matchedFiles}
-    Files Renamed: ${state.successCount}
-    Errors: ${state.displayErrors()}
-`);
+log( State.showLog() );
