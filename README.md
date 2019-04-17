@@ -15,9 +15,6 @@ And i want to rename each file to:
 ##### Filename - Author(s).extension
 ###### Eg. Rename Multiple Files in a Folder - WessCoby.pdf
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: After">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: After">
-
 ##  Renaming Process
 
 *   Use `filePattern` to filter for files that need to be renamed
@@ -25,6 +22,9 @@ And i want to rename each file to:
 *   Use `bookNamePattern` to extract book name and assign to the variable `book` and remove underscores
 *   Combine `book` and `author` and assign to `newName`. 
 *   Format: `book - @author.extension`
+
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: After">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: After">
 
 ## Usage
 *   Create a new folder named `Files` in the root directory and place the files to be renamed in it.
