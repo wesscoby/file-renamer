@@ -15,8 +15,8 @@ And i want to rename each file to:
 ##### Filename - Author(s).extension
 ###### Eg. Rename Multiple Files in a Folder - WessCoby.pdf
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: Before">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: Before">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: After">
+<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: After">
 
 ##  Renaming Process
 
