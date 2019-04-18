@@ -7,7 +7,9 @@
 */
 
 const zLibraryBookPattern = require('./ZLibraryBookPattern');
+const YoutubePlaylist = require('./YoutubePlaylist');
 
 module.exports = {
-    zLibraryBookPattern
+    zLibraryBookPattern,
+    YoutubePlaylist
 };
