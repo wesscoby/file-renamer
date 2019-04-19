@@ -4,8 +4,8 @@ class YoutubePlaylist {
     constructor(playlistPattern) {
         // Patterns
         this.filePattern = playlistPattern.filePattern; // Pattern to match for rename
-        this.episodeNumber = playlistPattern.episodeNumber;
-        this.episodeTitle = playlistPattern.episodeTitle;
+        this.episodeNumber = playlistPattern.episodeNumber; // Extract episode number
+        this.episodeTitle = playlistPattern.episodeTitle; // Extract episode title
     }
 
     static leadingZero (number) {
@@ -22,7 +22,7 @@ class YoutubePlaylist {
         episodeNumber = YoutubePlaylist.leadingZero(episodeNumber);
         let episodeTitle = file.match(this.episodeTitle)[1];
         // Return new file name
-        return `${episodeNumber}. ${episodeTitle}${path.extname(file)}`;
+        return `${episodeNumber}. ${episodeTitle.trim()}${path.extname(file)}`;
     }
 }
 

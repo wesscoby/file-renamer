@@ -16,9 +16,8 @@ let youtubePlaylistPattern = new YoutubePlaylist(playlistPattern);
 
 // Start Renaming
 files
-    .filter(file => shouldRename(file, youtubePlaylistPattern))
-    .forEach(file => renameFile(file, youtubePlaylistPattern));
+    .filter(file => shouldRename(file, youtubePlaylistPattern) )
+    .forEach(file => renameFile(file, youtubePlaylistPattern) );
 
 // Completion Information
 log( State.showLog() );
-

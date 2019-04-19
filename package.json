@@ -4,6 +4,7 @@
   "description": "Rename Multiple Files in a Folder",
   "main": "rename.js",
   "scripts": {
+    "test": "jest",
     "start": "node rename"
   },
   "repository": {
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/WessCoby/file-renamer#readme",
   "dependencies": {
     "chalk": "^2.4.2"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
   }
 }
