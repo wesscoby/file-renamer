@@ -53,7 +53,9 @@ class RenameFiles {
         }
     }
 
-    exec() {
+    exec(options = {}) {
+        // Check if use patterns option was passed. Then use specified pattern
+        if (options.usePattern) this.usePattern(options.usePattern);
         return new Promise((resolve, reject) => {
             if( this.pattern === null ) {
                 State.logError({ message: "Pattern NOT Defined" });

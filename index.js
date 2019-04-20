@@ -17,10 +17,11 @@ let youtubePlaylistPattern = new YoutubePlaylist(playlistPattern);
 // RenameFiles is a singleton
 // Call usePattern(pattern) to declare pattern to use
 // and call exec() to rename files in the directory
+// You can pass an option: exec({ usePattern: zLibraryBookPattern })
 // NB: exec() returns a Promise which resolves to State.showLog()
-RenameFiles.usePattern(zLibraryBookPattern);
+// RenameFiles.usePattern(zLibraryBookPattern);
 RenameFiles
-    .exec()
+    .exec({ usePattern: zLibraryBookPattern })
     .then(log)
     .catch(console.error);
 
