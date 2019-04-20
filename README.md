@@ -28,4 +28,8 @@ And i want to rename each file to:
 
 ## Usage
 *   Create a new folder named `Files` in the root directory and place the files to be renamed in it.
-*   Then use either `npm start` or `node rename` to run.
+*   In the index file, create your pattern (with a rename method)
+*   There are two ways to use the pattern:
+    *   First call RenameFiles.usePattern(patternClass). Then RenameFiles.exec() (returns a Promise)
+    *   Second, RenameFiles.exec({ usePattern: patternClass }) (Returns a Promise)
+*   Then use either `npm start`, `node index` or `node .` to run.
