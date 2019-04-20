@@ -2,10 +2,11 @@
   "name": "file-renamer",
   "version": "1.0.0",
   "description": "Rename Multiple Files in a Folder",
-  "main": "rename.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node rename"
+    "test:watch": "jest --watch",
+    "start": "node ."
   },
   "repository": {
     "type": "git",

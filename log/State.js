@@ -62,12 +62,19 @@ class State {
         }
     }
 
-    // Display Log
-    showLog() {
+    // Display Initial Log (when RenameFiles Class is initialized)
+    showInitialLog() {
+        return `
+        Status: ${green("Ready")}
+        Total Files in Directory: ${green(this.filesInDirectory)}
+        `;
+    }
+
+    // Display Log After completion
+    showCompletionLog() {
         return `
         Status: ${green("Completed")}
-        Total Files: ${green(this.filesInDirectory)}
-        Matched Files ${yellow("[To Be Renamed]:")} ${yellow(this.matchedFiles)}
+        Files Matched ${yellow("[To Be Renamed]:")} ${yellow(this.matchedFiles)}
         Files Renamed: ${green(this.filesRenamed)}
         Errors: ${red(this.displayErrors())}
         `;

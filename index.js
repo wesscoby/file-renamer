@@ -1,8 +1,8 @@
-const State = require('./log/State'); // State singleton
-const { files, shouldRename, renameFile } = require('./handleFileRename');
+const RenameFiles = require('./RenameFiles');
 const {
     zLibraryBookPattern, YoutubePlaylist
 } = require('./patterns'); // Patterns
+
 const { log } = console; // Destructure the console object
 
 // Instantiate Patterns which are not singletons here...
@@ -14,10 +14,13 @@ const playlistPattern = {
 
 let youtubePlaylistPattern = new YoutubePlaylist(playlistPattern);
 
-// Start Renaming
-files
-    .filter(file => shouldRename(file, youtubePlaylistPattern) )
-    .forEach(file => renameFile(file, youtubePlaylistPattern) );
+// RenameFiles is a singleton
+// Call usePattern(pattern) to declare pattern to use
+// and call exec() to rename files in the directory
+// NB: exec() returns a Promise which resolves to State.showLog()
+RenameFiles.usePattern(zLibraryBookPattern);
+RenameFiles
+    .exec()
+    .then(log)
+    .catch(console.error);
 
-// Completion Information
-log( State.showLog() );
