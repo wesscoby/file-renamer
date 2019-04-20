@@ -2,7 +2,7 @@
 #### Rename Multiple Files in a Folder
 
 This was inspired by, and is based on a gist by [Scriptex](https://gist.github.com/scriptex), [index.js](https://gist.github.com/scriptex/20536d8cda36221f91d69a6bd4a528b3).
-I have modified it to suit my purpose. 
+I have modified it to suit my purpose. <br />
 I have been downloading books from [Zlibrary](https://b-ok.cc/) and the downloaded files have a naming format:
 ##### \[Author\(s\)\]File_name\(z-lib.org\).extension
 ###### Eg. \[WessCoby\]_Rename_Multiple_Files_in_a_Folder(z-lib.org\).pdf
@@ -30,6 +30,8 @@ And i want to rename each file to:
 *   Create a new folder named `Files` in the root directory and place the files to be renamed in it.
 *   In the index file, create your pattern (with a rename method)
 *   There are two ways to use the pattern:
-    *   First call RenameFiles.usePattern(patternClass). Then RenameFiles.exec() (returns a Promise)
-    *   Second, RenameFiles.exec({ usePattern: patternClass }) (Returns a Promise)
+    *   First call `RenameFiles.usePattern(patternClass)`. Then `RenameFiles.exec()`
+    *   Second, `RenameFiles.exec({ usePattern: patternClass })` 
+NB: `RenameFiles.exec()` returns a Promise: <br />
+    `RenameFiles.exec({ usePattern: patternClass }).then( console.log ).catch( console.error );`
 *   Then use either `npm start`, `node index` or `node .` to run.
