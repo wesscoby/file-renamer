@@ -31,7 +31,7 @@ And i want to rename each file to:
 *   In the index file, create your pattern (with a rename method)
 *   There are two ways to use the pattern:
     *   First call `RenameFiles.usePattern(patternClass)`. Then `RenameFiles.exec()`
-    *   Second, `RenameFiles.exec({ usePattern: patternClass })` 
+    *   Second, `RenameFiles.exec({ usePattern: patternClass })` <br />
 NB: `RenameFiles.exec()` returns a Promise: <br />
     `RenameFiles.exec({ usePattern: patternClass }).then( console.log ).catch( console.error );`
 *   Then use either `npm start`, `node index` or `node .` to run.
