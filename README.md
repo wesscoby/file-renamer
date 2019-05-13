@@ -23,7 +23,7 @@ And i want to rename each file to:
 *   Combine `book` and `author` and assign to `newName`. 
 *   Format: `book - @author.extension`
 
-![IDE: After](./images/ide_aftr.png)
+![IDE: After](./images/files_aftr.png)
 ![Files: After](./images/ide_aftr.png)
 
 ## Usage
