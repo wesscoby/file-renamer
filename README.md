@@ -7,8 +7,8 @@ I have been downloading books from [Zlibrary](https://b-ok.cc/) and the download
 ##### \[Author\(s\)\]File_name\(z-lib.org\).extension
 ###### Eg. \[WessCoby\]_Rename_Multiple_Files_in_a_Folder(z-lib.org\).pdf
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_bfr.png" width="95%" title="Files: Before">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_bfr.png" width="95%" title="IDE: Before">
+![Files: Before](./images/files_bfr.png)
+![IDE: Before](./images/ide_bfr.png)
 
 The Key things i want from this file name string are just the file name and authors(s)
 And i want to rename each file to:
@@ -23,8 +23,8 @@ And i want to rename each file to:
 *   Combine `book` and `author` and assign to `newName`. 
 *   Format: `book - @author.extension`
 
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/ide_aftr.png" width="95%" title="IDE: After">
-<img src="https://github.com/WessCoby/file-renamer/blob/master/images/files_aftr.png" width="95%" title="Files: After">
+![IDE: After](./images/ide_aftr.png)
+![Files: After](./images/ide_aftr.png)
 
 ## Usage
 *   Create a new folder named `Files` in the root directory and place the files to be renamed in it.
